@@ -20,11 +20,14 @@ const user = [
       city: 'Los Angeles',
       state: 'CA'
     },
-    designation: 'admin'
+    designation: 'admin',    
   },
   {
     name: 'Shelly',
-    designation: 'guest'
+    designation: 'guest',
+    sayHi() {
+      console.log(`Hi, ${this.name}`);
+    }
   }
 ];
 
@@ -37,6 +40,10 @@ console.log(user[1].address?.street); // undefined
 
 console.log(user[0].address && user[0].address.state); // CA
 console.log(user[1].address && user[1].address.state); // undefined
+
+// ?.() is used to call a function that may not exist.
+// console.log(user[0].sayHi()); // not a function
+console.log(user[1].sayHi()); //Hi, Shelly
 
 // Delete
 
